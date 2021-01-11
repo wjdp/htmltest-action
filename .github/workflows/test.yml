@@ -1,0 +1,68 @@
+on: [push]
+
+jobs:
+  nothing:
+    runs-on: ubuntu-latest
+    name: Fails when no path nor config present
+    continue-on-error: true
+    steps:
+      - name: Run htmltest
+        uses: wjdp/htmltest-action@master
+  no_test_files:
+    runs-on: ubuntu-latest
+    name: Run without any test files
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run htmltest
+        uses: wjdp/htmltest-action@master
+        with:
+          path: fixtures/empty
+  fails:
+    runs-on: ubuntu-latest
+    name: Fails when there are issues
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run htmltest
+        uses: wjdp/htmltest-action@master
+        with:
+          path: fixtures/fail
+  passes:
+    runs-on: ubuntu-latest
+    name: Passes when there are no issues
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run htmltest
+        uses: wjdp/htmltest-action@master
+        with:
+          path: fixtures/pass
+  from_config:
+    runs-on: ubuntu-latest
+    name: Passes when running against config file
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run htmltest
+        uses: wjdp/htmltest-action@master
+        with:
+          config: fixtures/with_config/.htmltest.yml
+  log_level:
+    runs-on: ubuntu-latest
+    name: Accepts a log level value
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run htmltest
+        uses: wjdp/htmltest-action@master
+        with:
+          path: fixtures/pass
+          log_level: 0
+  skip_external:
+    runs-on: ubuntu-latest
+    name: Accepts skip external checks
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run htmltest
+        uses: wjdp/htmltest-action@master
+        with:
+          path: fixtures/pass
+          log_level: 0
+          skip_external: yes

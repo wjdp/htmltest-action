@@ -1,0 +1,25 @@
+name: htmltest
+author: Will Pimblett
+description: Runs htmltest on a directory
+
+branding:
+  color: green
+  icon: check-square
+
+inputs:
+  path:
+    description: Path to test
+    required: false
+  config:
+    description: Path to config file
+    required: false
+  log_level:
+    description: What log level to run at
+    required: false
+  skip_external:
+    description: Skip external checks
+    required: false
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
