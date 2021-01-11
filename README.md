@@ -1,5 +1,7 @@
 # :white_check_mark: htmltest GitHub Action
 
+![Test](https://github.com/wjdp/htmltest-action/workflows/Test/badge.svg)
+
 Run [htmltest](https://github.com/wjdp/htmltest) as part of your GitHub Actions workflow. 
 
 ## :computer: Usage
