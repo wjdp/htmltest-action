@@ -1,4 +1,4 @@
-name: htmltest
+name: htmltest-action
 author: Will Pimblett
 description: Runs htmltest on a directory
 
