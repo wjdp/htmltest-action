@@ -10,16 +10,16 @@ By providing a path
 
 ```yaml
 - name: Run htmltest
-uses: wjdp/htmltest-action@master
-with:
-  path: dist
+  uses: wjdp/htmltest-action@master
+  with:
+    path: dist
 ```
 
 or by setting a config file
 
 ```yaml
 - name: Run htmltest
-uses: wjdp/htmltest-action@master
-with:
-  config: .htmltest.yml
+  uses: wjdp/htmltest-action@master
+  with:
+    config: .htmltest.yml
 ```
