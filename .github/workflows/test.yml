@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Run without any test files
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Run htmltest
         uses: wjdp/htmltest-action@master
         with:
@@ -23,7 +23,7 @@ jobs:
     name: Fails when there are issues
     continue-on-error: true
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Run htmltest
         uses: wjdp/htmltest-action@master
         with:
@@ -32,7 +32,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Passes when there are no issues
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Run htmltest
         uses: wjdp/htmltest-action@master
         with:
@@ -41,7 +41,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Passes when running against config file
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Run htmltest
         uses: wjdp/htmltest-action@master
         with:
@@ -50,7 +50,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Accepts a log level value
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Run htmltest
         uses: wjdp/htmltest-action@master
         with:
@@ -60,7 +60,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Accepts skip external checks
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Run htmltest
         uses: wjdp/htmltest-action@master
         with:
